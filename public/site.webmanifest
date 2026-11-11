@@ -1,0 +1,19 @@
+{
+  "name": "សាលាបឋមសិក្សា រះអរុណ · ប្រព័ន្ធគ្រប់គ្រងសាលា",
+  "short_name": "រះអរុណ",
+  "description": "ប្រព័ន្ធគ្រប់គ្រងសិស្ស គ្រូបង្រៀន ថ្នាក់រៀន វត្តមាន និងថ្លៃសិក្សា។",
+  "lang": "km",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#056dff",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

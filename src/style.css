@@ -1,0 +1,163 @@
+@import "@kumo-vue/tokens/styles";
+
+/* Google Sans for every Kumo component (they all read --kv-font-sans).
+   "Noto Sans Khmer" stays as a fallback while the web font loads. */
+:root {
+  --kv-font-sans: "Google Sans", "Noto Sans Khmer", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--kv-surface-canvas, var(--kv-surface-recessed));
+  color: var(--kv-text-default);
+  font-family: var(--kv-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- small app-level helpers ---- */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kv-space-6);
+  padding: var(--kv-space-6);
+  max-inline-size: 1280px;
+  inline-size: 100%;
+  margin-inline: auto;
+}
+
+/*
+ * LayerCard helpers. Cards use Kumo's layered LayerCard: a LayerCardSecondary
+ * header row on the tinted base, and a raised LayerCardPrimary panel in front.
+ */
+.layer-head {
+  justify-content: space-between;
+  min-block-size: 3.5rem;
+}
+
+.layer-head > strong {
+  color: var(--kv-text-strong);
+  font-weight: 600;
+}
+
+/* A primary panel that holds a table edge to edge */
+.layer-flush {
+  gap: 0 !important;
+  padding: 0 !important;
+}
+
+/* A padded strip inside a flush panel (toolbars, footers) */
+.layer-section {
+  padding: var(--kv-space-4);
+}
+
+.layer-section + .layer-section,
+.layer-flush > .table-wrap + .layer-section {
+  border-top: 1px solid var(--kv-line);
+}
+
+/* A comfortable padded panel (forms, lists of meters) */
+.layer-body {
+  gap: var(--kv-space-4) !important;
+  padding: var(--kv-space-5) !important;
+}
+
+/* Fill the grid cell so cards in a row line up */
+.kv-layer-card--layered {
+  block-size: 100%;
+}
+
+.kv-layer-card--layered > .kv-layer-card__primary {
+  flex: 1;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--kv-space-3);
+}
+
+.toolbar > .grow {
+  flex: 1 1 240px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--kv-space-3);
+}
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border-radius: var(--kv-radius-full);
+  background: var(--kv-surface-tint);
+  color: var(--kv-text-strong);
+  font-size: var(--kv-text-xs);
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--kv-text-subtle);
+  font-size: var(--kv-text-sm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--kv-space-4);
+}
+
+/*
+ * Forms inside a Kumo Dialog. Kumo draws field borders and focus rings as
+ * box-shadows outside the field, and the dialog's scroll area (overflow: auto)
+ * clips them at its edges. A little padding gives the rings room.
+ */
+.dialog-form {
+  padding: 4px;
+}
+
+/*
+ * Khmer typography. Khmer stacks vowels and subscript consonants above and
+ * below the base line, so it needs more line height than Latin text, and it
+ * has no letter case, so uppercase/letter-spacing tricks must be switched off.
+ */
+:lang(km) body {
+  line-height: 1.7;
+}
+
+:lang(km) :is(p, li, td, th, label, .muted) {
+  line-height: 1.7;
+}
+
+:lang(km) * {
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+/* Badges have a fixed height in Kumo; let Khmer marks breathe. */
+:lang(km) .kv-badge {
+  line-height: 1.6;
+  block-size: auto;
+  padding-block: 1px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: var(--kv-space-4);
+  }
+}

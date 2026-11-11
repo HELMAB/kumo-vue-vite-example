@@ -1,0 +1,6 @@
+{
+  "$schema": "https://kumo-vue.dev/schema.json",
+  "componentsDir": "src/components/ui",
+  "importAlias": "@/components/ui",
+  "css": "src/style.css"
+}

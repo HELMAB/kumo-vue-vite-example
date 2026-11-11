@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Sunrise Primary School">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#418dff"/>
+      <stop offset="1" stop-color="#024dd6"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd25a"/>
+      <stop offset="1" stop-color="#ff9f1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- rays -->
+  <g stroke="#ffd25a" stroke-width="26" stroke-linecap="round">
+    <line x1="256" y1="96" x2="256" y2="138"/>
+    <line x1="136" y1="146" x2="164" y2="176"/>
+    <line x1="376" y1="146" x2="348" y2="176"/>
+    <line x1="88" y1="252" x2="128" y2="256"/>
+    <line x1="424" y1="252" x2="384" y2="256"/>
+  </g>
+  <!-- rising sun -->
+  <circle cx="256" cy="300" r="104" fill="url(#sun)"/>
+  <!-- open book -->
+  <path d="M256 314c-44-30-104-34-152-18v124c48-16 108-12 152 18z" fill="#ffffff"/>
+  <path d="M256 314c44-30 104-34 152-18v124c-48-16-108-12-152 18z" fill="#e3edff"/>
+  <path d="M256 314v124" stroke="#024dd6" stroke-width="10" stroke-linecap="round" opacity=".35"/>
+</svg>
